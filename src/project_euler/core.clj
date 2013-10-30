@@ -13,4 +13,4 @@
 (lazy-seq
 (cons n (lazy-seq-fibo b n))))))
 
-(take 12 (lazy-seq-fibo))
+(reduce + (filter even? (take-while (partial > 4000000) (lazy-seq-fibo))))
